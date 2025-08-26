@@ -5,7 +5,6 @@ Tienes un ticket de cena que cuesta 120 € y en el que ya se incluyen las bebid
 Calcula cuánto tendría que pagar cada comensal para dividir los costos de manera equitativa.
 Utiliza JavaScript para hacer el cálculo y mostrar el resultado por consola. */
 
-console.log(120 - 18); //Calculamos el coste de la cena sin las bebidas, que las invito yo
-console.log(102 / 6); //dividimos el resultado entre los 6 amigos
+console.log((120 - 18) / 6);
 
 //el resultado es 17
