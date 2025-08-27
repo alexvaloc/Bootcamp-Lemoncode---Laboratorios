@@ -1,4 +1,4 @@
-# typescript-sandbox
+# Laboratorio Modulo 03 - Variables
 
 Pasos para abrir el laboratorio:
 
