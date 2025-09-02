@@ -4,18 +4,16 @@ const botonReset = document.getElementById("boton-reset");
 const botonSiguiente = document.getElementById("boton-siguiente");
 const botonAnterior = document.getElementById("boton-anterior");
 const botonCambiar = document.getElementById("boton-cambiar-turno");
-const inputNuevoTurno = document.getElementById(
-  "turno-deseado"
-) as HTMLInputElement;
+const inputNuevoTurno = document.getElementById("turno-deseado");
 
 function reset(numeroTurno: HTMLElement | null) {
-  if (numeroTurno) {
+  if (numeroTurno instanceof HTMLElement) {
     numeroTurno.textContent = "00";
   }
 }
 
 function siguiente(numeroTurno: HTMLElement | null) {
-  if (!numeroTurno) return;
+  if (!(numeroTurno instanceof HTMLElement)) return; //Si numeroTurno NO es un HTMLElement, sal
   let valor = Number(numeroTurno.textContent);
   valor = valor + 1;
   if (numeroTurno) {
@@ -24,7 +22,7 @@ function siguiente(numeroTurno: HTMLElement | null) {
 }
 
 function anterior(numeroTurno: HTMLElement | null) {
-  if (!numeroTurno) return;
+  if (!(numeroTurno instanceof HTMLElement)) return;
   let valor = Number(numeroTurno.textContent) || 0;
   if (valor > 0) {
     valor = valor - 1;
@@ -35,19 +33,24 @@ function anterior(numeroTurno: HTMLElement | null) {
 }
 
 function cambiarTurno() {
-  const turnoDeseado = (
-    document.getElementById("turno-deseado") as HTMLInputElement
-  ).value;
-  const numero = Number(turnoDeseado);
-  if (numeroTurno && numero > 0) {
-    //Solo adminitmos valores mayores a 0
-    numeroTurno.textContent = turnoDeseado.toString().padStart(2, "0");
+  // const turnoDeseado = (
+  //   document.getElementById("turno-deseado") as HTMLInputElement
+  // ).value; En vez de forzar el as, vamos a usar instance of:
+  if (
+    inputNuevoTurno instanceof HTMLInputElement &&
+    numeroTurno instanceof HTMLElement
+  ) {
+    const turnoDeseado = Number(inputNuevoTurno.value); //Value devuelve string, hay que parsear
+    if (turnoDeseado > 0) {
+      //Solo adminitmos valores mayores a 0
+      numeroTurno.textContent = turnoDeseado.toString().padStart(2, "0");
+    }
   }
 }
 
 //botón para limpiar el input
 function limpiarInput() {
-  if (inputNuevoTurno) {
+  if (inputNuevoTurno instanceof HTMLInputElement) {
     inputNuevoTurno.value = "";
   }
 }
