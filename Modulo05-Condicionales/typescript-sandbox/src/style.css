@@ -77,13 +77,15 @@ img {
 #puntuacion {
   background: rgba(0, 0, 0, 0.2);
   font-weight: 600;
-  height: 30px;
+  min-height: 30px;
+  max-height: auto;
   font-size: 24px;
 }
 
 #mensaje {
   background: rgba(255, 255, 255, 0.04);
-  height: 30px;
+  min-height: 30px;
+  max-height: auto;
   color: #ffe;
   font-size: 20px;
 }
