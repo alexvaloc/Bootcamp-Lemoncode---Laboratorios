@@ -132,6 +132,14 @@ img {
   transform: translatey(-3px); /*lo mueve hacia arriba*/
 }
 
+#botonQuePasaria {
+  background: linear-gradient(180deg, #33efef 0%, #2cd0b5 100%);
+  color: #3b2a07;
+}
+#botonQuePasaria:hover {
+  transform: translateY(-3px); /*lo mueve hacia arriba*/
+}
+
 @media (max-width: 420px) {
   .imagen-container img {
     width: 140px;
