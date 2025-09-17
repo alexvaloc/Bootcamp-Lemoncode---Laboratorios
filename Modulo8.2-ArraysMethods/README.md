@@ -1,4 +1,4 @@
-# Laboratorio del modulo 8.1 - Bucles
+# Laboratorio del modulo 8.2 - Array Methods
 
 Pasos para abrir el laboratorio:
 
